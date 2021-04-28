@@ -2,11 +2,11 @@ import Styled from "styled-components";
 
 const Button = Styled.button`
   border: none;
-  border-radius: 10px;
-  text-align: center;
+  border-radius: 4px;
   display: inline-block;
   cursor: pointer;
   font-weight: 600;
+  font-family: "Montserrat", sans-serif;
     
   ${(props) => {
     switch (props.size) {

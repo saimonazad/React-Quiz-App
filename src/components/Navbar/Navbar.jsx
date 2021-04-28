@@ -8,7 +8,6 @@ import closeIcon from "../../assets/icons/close.svg";
 import { AccountCircle } from "@styled-icons/material-outlined";
 
 const AccountIcon = Styled(AccountCircle)`
-    vertical-align: middle;
     padding-right: 6px;
     color: rgb(0, 123, 255);
     height: 1.5rem;
