@@ -1,0 +1,46 @@
+@import-normalize;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+  * Remove the border on images inside links in IE 10-.
+  */
+
+img {
+  border-style: none;
+}
+
+/**
+  * Font family import 
+**/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: local("Montserrat"),
+    url(./assets/fonts/Montserrat-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  src: local("Montserrat"),
+    url(./assets/fonts/Montserrat-SemiBold.ttf) format("truetype");
+}
