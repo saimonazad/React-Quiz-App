@@ -3,12 +3,8 @@ import Styled from "styled-components";
 import Button from "../../../shared/button";
 import quizData from "../../../data/questions";
 import { ArrowRightAlt } from "@styled-icons/material-sharp/ArrowRightAlt";
+import QuizResult from "../QuizResult/QuizResult";
 
-const ArrowRight = Styled(ArrowRightAlt)`
-    padding-right: 6px;
-  
-    
-`;
 //styled components
 const Wrapper = Styled.div`
 flex: 1 1 100%;
@@ -45,14 +41,24 @@ const Option = Styled(Button)`
     margin-bottom: 10px;
     font-weight: 600;
 
-    ${(props) => {
-      if (props.active) {
-        return `
-          background-color: #60D91A;
-          color: #FFF;
-        `;
-      }
-    }}
+    ${(props) =>
+      props.isActive &&
+      `background-color: #60D91A;
+      color: #FFF
+      `}
+`;
+const OptionImage = Styled.div`
+    
+
+    ${(props) =>
+      props.isActive &&
+      `background-color: #60D91A;
+      color: #FFF
+      `}
+`;
+const ImageAnswers = Styled.img.attrs((props) => ({ src: props.img }))`
+    width: 150;
+    height: 150;
 `;
 const SubmitBtn = Styled(Button)`
     color:#FFF;
@@ -67,30 +73,76 @@ const NextBtn = Styled(Button)`
     padding: 25px 0;
     letter-spacing: 0.3rem;
 `;
+const ArrowRight = Styled(ArrowRightAlt)`
+    padding-right: 6px;
+`;
+
 
 const QuizQuestions = () => {
-  const [number, setNumber] = useState(0);
+  const [quizNo, setQuizNo] = useState(0);
+  const [correctAns, setCorrectAns] = useState(0);
+  const [selectedAns, setselectedAns] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const checkAnswer = () => {
+    if (selectedAns == quizData[quizNo].correct) {
+      setCorrectAns(correctAns + 1);
+    }
+    selectedAns != null ? setIsSubmitted(true) : setIsSubmitted(false);
+    if (quizNo == quizData.length - 1) {
+      setQuizNo(quizNo + 1);
+    }
+  };
   return (
     <Wrapper>
-      {quizData[0] && (
+      {quizNo < quizData.length ? (
         <>
           <Question>
             <p>
-              Question {number + 1} <span>/{quizData.length}</span>
+              Question {quizNo + 1} <span>/{quizData.length}</span>
             </p>
-            <h1>{quizData[0].question}</h1>
+            <h1>{quizData[quizNo].question}</h1>
           </Question>
           <Options>
-            {quizData[0].answers.map((item) => (
-              <Option block>{item}</Option>
-            ))}
+            {quizData[quizNo].questionType == "text" ? (
+              quizData[quizNo].answers.map((item, index) => (
+                <Option
+                  isActive={selectedAns == index}
+                  block
+                  onClick={(e) => setselectedAns(e.target.value)}
+                  value={index}
+                >
+                  {item}
+                </Option>
+              ))
+            ) : (
+              <OptionImage>
+                <ImageAnswers img="../../../assets/img/quiz-questions/chris-liverani-rD2dc_2S3i0-unsplash.png"></ImageAnswers>
+              </OptionImage>
+            )}
           </Options>
-          <SubmitBtn block>SUBMIT</SubmitBtn>
-          <NextBtn block>
-            NEXT
-            <ArrowRight size="30" title="next button" />
-          </NextBtn>
+          <SubmitBtn block onClick={() => checkAnswer()}>
+            SUBMIT
+          </SubmitBtn>
+          {isSubmitted && quizNo < quizData.length - 1 && (
+            <NextBtn
+              block
+              onClick={() => {
+                setQuizNo(quizNo + 1);
+                setIsSubmitted(false);
+                setselectedAns(null);
+              }}
+            >
+              NEXT
+              <ArrowRight size="30" title="next button" />
+            </NextBtn>
+          )}
         </>
+      ) : (
+        <QuizResult
+          correctAnswers={correctAns}
+          totalQuestions={quizData.length}
+        />
       )}
     </Wrapper>
   );
