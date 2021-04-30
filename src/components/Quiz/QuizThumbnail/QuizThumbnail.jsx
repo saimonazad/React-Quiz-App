@@ -8,6 +8,7 @@ const Wrapper = Styled.div`
     flex: 1 1 100%;
     margin-right: 50px;
     position: relative;
+    align-self: flex-start;
     img {
         width: 100%;
         height: 100%;

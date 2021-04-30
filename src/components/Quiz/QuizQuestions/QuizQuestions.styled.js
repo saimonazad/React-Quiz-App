@@ -60,13 +60,13 @@ const Option = Styled(Button)`
       ${(props) => {
         if (props.response && props.response != props.correct) {
           return `
-                background-color: red;
+                background-color: #D60000;
                 color: #FFF;
 
                 &:after{
                     content: "✕";
                     float: right;
-                    color: red;
+                    color: #D60000;
                     border-radius: 50%;
                     background-color: #FFF;
                     padding: 0 5px;
@@ -76,6 +76,7 @@ const Option = Styled(Button)`
       }}
 `;
 const OptionImage = Styled.div`
+position:relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap:2rem;
@@ -90,6 +91,59 @@ const ImageAnswers = Styled.img`
       `border: 5px solid #60D91A;
       border-radius: 15px;
       `}
+
+    ${(props) =>
+      props.correct &&
+      `border: 5px solid #60D91A;
+      border-radius: 15px;
+         `}
+
+      ${(props) => {
+        if (props.response && props.response != props.correct) {
+          return `
+                border: 5px solid #D60000;
+                border-radius: 15px;
+                `;
+        }
+      }}
+`;
+const ImageContainer = Styled.div`
+      position: relative;
+
+      
+    
+    ${(props) =>
+      props.correct &&
+      `&:after{
+        content: "✓";
+        position: absolute;
+        top: 40%;
+        color: #60D91A;
+        border-radius: 50%;
+        background-color: #FFF;
+        padding: 5px 10px;
+        left: 40%;
+        font-size: 25px;
+      }
+    `}
+
+    ${(props) => {
+      if (props.response && props.response != props.correct) {
+        return `
+                &:after{
+                    content: "✕";
+                    position: absolute;
+                    top: 40%;
+                    border-radius: 50%;
+                    background-color: #D60000;
+                    color: #FFF;
+                    padding: 5px 10px;
+                    left: 40%;
+                    font-size: 25px;
+         }
+                `;
+      }
+    }}
 `;
 const SubmitBtn = Styled(Button)`
     color:#FFF;
@@ -115,6 +169,7 @@ export {
   OptionWrapper,
   Option,
   OptionImage,
+  ImageContainer,
   ImageAnswers,
   SubmitBtn,
   NextBtn,

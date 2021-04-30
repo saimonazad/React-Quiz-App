@@ -7,7 +7,7 @@ const quizData = [
       "chris-liverani-rD2dc_2S3i0-unsplash.png",
       "oriento-0dg-EfHgA8Q-unsplash.png",
     ],
-    correct: 0,
+    correct: 1,
     questionId: "110",
   },
   {

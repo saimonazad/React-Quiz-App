@@ -7,6 +7,7 @@ import {
   Option,
   OptionImage,
   ImageAnswers,
+  ImageContainer,
 } from "../QuizQuestions/QuizQuestions.styled";
 
 import quizData from "../../../data/questions";
@@ -30,7 +31,7 @@ const ReviewAnswers = ({ result }) => {
                 <Option
                   block
                   correct={quiz.correct === index}
-                  response={result[quiz.questionId]==index}
+                  response={result[quiz.questionId] == index}
                 >
                   {item}
                 </Option>
@@ -38,9 +39,16 @@ const ReviewAnswers = ({ result }) => {
             ) : (
               <OptionImage>
                 {quiz.answers.map((img, index) => (
-                  <ImageAnswers
-                    src={process.env.PUBLIC_URL + `/quiz-data/img/${img}`}
-                  ></ImageAnswers>
+                  <ImageContainer
+                    correct={quiz.correct === index}
+                    response={result[quiz.questionId] == index}
+                  >
+                    <ImageAnswers
+                      src={process.env.PUBLIC_URL + `/quiz-data/img/${img}`}
+                      correct={quiz.correct === index}
+                      response={result[quiz.questionId] == index}
+                    ></ImageAnswers>
+                  </ImageContainer>
                 ))}
               </OptionImage>
             )}
