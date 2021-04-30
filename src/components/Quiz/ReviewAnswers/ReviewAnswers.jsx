@@ -23,7 +23,15 @@ const ReviewAnswers = ({ result }) => {
               Question {index + 1} <span>/{quizData.length}</span>
             </p>
             <h1>{quiz.question}</h1>
-            {console.log(result[quiz.questionId])}
+            {quizData[index].questionImage && (
+              <img
+                className="question__Image"
+                src={
+                  process.env.PUBLIC_URL +
+                  `/quiz-data/img/${quizData[index].questionImage}`
+                }
+              />
+            )}
           </Question>
           <OptionWrapper>
             {quiz.questionType == "text" ? (

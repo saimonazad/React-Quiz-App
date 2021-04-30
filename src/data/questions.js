@@ -1,6 +1,18 @@
 const quizData = [
   {
     question: "Why would you get this pop up?",
+    questionImage: "1793223770.png",
+    questionType: "text",
+    answers: [
+      "The layer you are trying to work on is locked",
+      "Doesn't matter just close it and try again",
+      "Because photoshop is broken",
+    ],
+    correct: 1,
+    questionId: "110",
+  },
+  {
+    question: "Why would you get this pop up?",
     questionType: "image",
     answers: [
       "oriento-0dg-EfHgA8Q-unsplash.png",

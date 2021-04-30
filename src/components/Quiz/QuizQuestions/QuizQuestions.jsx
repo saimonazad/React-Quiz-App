@@ -23,7 +23,6 @@ const QuizQuestions = () => {
   const [responses, setResponses] = useState({});
 
   const checkAnswer = () => {
-    console.log("worked!!");
     if (selectedAns != null) {
       if (selectedAns == quizData[quizNo].correct) {
         setCorrectAns(correctAns + 1);
@@ -48,6 +47,15 @@ const QuizQuestions = () => {
               Question {quizNo + 1} <span>/{quizData.length}</span>
             </p>
             <h1>{quizData[quizNo].question}</h1>
+            {quizData[quizNo].questionImage && (
+              <img
+              className="question__Image"
+                src={
+                  process.env.PUBLIC_URL +
+                  `/quiz-data/img/${quizData[quizNo].questionImage}`
+                }
+              />
+            )}
           </Question>
           <OptionWrapper>
             {quizData[quizNo].questionType == "text" ? (

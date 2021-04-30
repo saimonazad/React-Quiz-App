@@ -21,6 +21,11 @@ const Question = Styled.div`
         font-size: 24px;
         line-height: 30px;
     }
+    img {
+      display:block;
+      margin: 30px auto 0 auto;
+      width: 55%;
+    }
 `;
 const OptionWrapper = Styled.div`
     color:#000;
