@@ -42,6 +42,38 @@ const Option = Styled(Button)`
       `background-color: #60D91A;
       color: #FFF;
       `}
+      
+      ${(props) =>
+        props.correct &&
+        `background-color: #60D91A;
+         color: #FFF;
+         &:after{
+             content: "✓";
+            float: right;
+            color: #60D91A;
+            border-radius: 50%;
+            background-color: #FFF;
+            padding: 0 5px;
+         }
+         `}
+
+      ${(props) => {
+        if (props.response && props.response != props.correct) {
+          return `
+                background-color: red;
+                color: #FFF;
+
+                &:after{
+                    content: "✕";
+                    float: right;
+                    color: red;
+                    border-radius: 50%;
+                    background-color: #FFF;
+                    padding: 0 5px;
+         }
+                `;
+        }
+      }}
 `;
 const OptionImage = Styled.div`
     display: grid;

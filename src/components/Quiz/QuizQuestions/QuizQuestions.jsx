@@ -20,7 +20,7 @@ const QuizQuestions = () => {
   const [correctAns, setCorrectAns] = useState(0);
   const [selectedAns, setSelectedAns] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [responses, setResponses] = useState([]);
+  const [responses, setResponses] = useState({});
 
   const checkAnswer = () => {
     console.log("worked!!");
@@ -29,10 +29,10 @@ const QuizQuestions = () => {
         setCorrectAns(correctAns + 1);
       }
       setIsSubmitted(true);
-      setResponses([
+      setResponses({
         ...responses,
-        { [quizData[quizNo].questionId]: selectedAns },
-      ]);
+         [quizData[quizNo].questionId]: selectedAns ,
+      });
     }
     if (quizNo == quizData.length - 1) {
       setQuizNo(quizNo + 1);

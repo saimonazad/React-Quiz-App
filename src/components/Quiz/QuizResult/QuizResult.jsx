@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Styled from "styled-components";
 
 import Button from "../../../shared/button";
@@ -11,6 +11,7 @@ import percentage from "../../../utils/percentageCalc";
 import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare";
 import { Facebook } from "@styled-icons/entypo-social/Facebook";
 import { Medal } from "@styled-icons/entypo/Medal";
+import ReviewAnswers from "../ReviewAnswers/ReviewAnswers";
 
 const Wrapper = Styled.div`
   text-align: center;
@@ -91,35 +92,43 @@ const Medal_icon = Styled(Medal)`
     margin-right: 8px;
 `;
 
-const QuizResult = ({ correctAnswers, totalQuestions,result }) => {
+const QuizResult = ({ correctAnswers, totalQuestions, result }) => {
+  const [reviewPage, setreviewPage] = useState(false);
   return (
-    <Wrapper>
-      {console.log(result)}
-      <Medal_icon size="22" title="medal icon" />
-      <h1 className="title">SCORE</h1>
-      <h2 className="score">{percentage(correctAnswers, totalQuestions)}%</h2>
-      <p class="score__greet">Congratulations</p>
-      <p className="score__details">
-        You got {correctAnswers} out of {totalQuestions} Questions
-      </p>
-      <ReviewBtn backgroundColor="#0062FF">Review</ReviewBtn>
-      <p className="score__share">
-        Share score
-        <Fa_icon size="30" title="medal icon" />
-        <Li_icon size="35" title="medal icon" />
-      </p>
-      <p className="workshop__info">
-        You can attend this workshop
-        <br /> to improve your skill
-      </p>
-      <Workshop>
-        <img src={`${workshopImg}`} alt="workshop thumbnail" />
-        <p>
-          User Experience (UX) Design:
-          <br /> From Ideation to Validation
-        </p>
-      </Workshop>
-    </Wrapper>
+    <>
+      {reviewPage === false ? (
+        <Wrapper>
+          <Medal_icon size="22" title="medal icon" />
+          <h1 className="title">SCORE</h1>
+          <h2 className="score">
+            {percentage(correctAnswers, totalQuestions)}%
+          </h2>
+          <p class="score__greet">Congratulations</p>
+          <p className="score__details">
+            You got {correctAnswers} out of {totalQuestions} Questions
+          </p>
+          <ReviewBtn backgroundColor="#0062FF" onClick={() => setreviewPage(true)}>Review</ReviewBtn>
+          <p className="score__share">
+            Share score
+            <Fa_icon size="30" title="medal icon" />
+            <Li_icon size="35" title="medal icon" />
+          </p>
+          <p className="workshop__info">
+            You can attend this workshop
+            <br /> to improve your skill
+          </p>
+          <Workshop>
+            <img src={`${workshopImg}`} alt="workshop thumbnail" />
+            <p>
+              User Experience (UX) Design:
+              <br /> From Ideation to Validation
+            </p>
+          </Workshop>
+        </Wrapper>
+      ) : (
+        <ReviewAnswers result={result} />
+      )}
+    </>
   );
 };
 
