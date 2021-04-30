@@ -3,8 +3,8 @@ const quizData = [
     question: "Why would you get this pop up?",
     questionType: "image",
     answers: [
+      "oriento-0dg-EfHgA8Q-unsplash.png",
       "chris-liverani-rD2dc_2S3i0-unsplash.png",
-      "imagesQuiz.png",
       "oriento-0dg-EfHgA8Q-unsplash.png",
     ],
     correct: 0,
@@ -20,7 +20,7 @@ const quizData = [
       "Single row",
     ],
     correct: 1,
-    questionId: "120",
+    questionId: "11",
   },
   {
     question:
@@ -28,7 +28,7 @@ const quizData = [
     questionType: "text",
     answers: ["True", "False"],
     correct: 0,
-    questionId: "130",
+    questionId: "12",
   },
   {
     question:
@@ -36,7 +36,15 @@ const quizData = [
     questionType: "text",
     answers: ["anchorpoints", "markers", "spotters", "clusters"],
     correct: 0,
-    questionId: "20",
+    questionId: "13",
+  },
+  {
+    question:
+      "The name of the points that are made with the pen tool when it is makinga path.",
+    questionType: "text",
+    answers: ["anchorpoints", "markers", "spotters", "clusters"],
+    correct: 0,
+    questionId: "14",
   },
   {
     question:
@@ -46,14 +54,13 @@ const quizData = [
     correct: 0,
     questionId: "15",
   },
-  {
-    question:
-      "The name of the points that are made with the pen tool when it is makinga path.",
-    questionType: "text",
-    answers: ["anchorpoints", "markers", "spotters", "clusters"],
-    correct: 0,
-    questionId: "18",
-  },
 ];
 
-export default quizData.sort(() => 0.5 - Math.random());
+const response ={
+  15: 1,
+  12: 2,
+  13:0
+}
+
+// export default quizData.sort(() => 0.5 - Math.random());
+export default quizData;

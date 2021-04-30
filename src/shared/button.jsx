@@ -35,7 +35,7 @@ const Button = Styled.button`
     if (props.textColor) {
       return `color: ${props.textColor};`;
     }
-    return "color: white;";
+    return "color: #FFF;";
   }} 
   
 
