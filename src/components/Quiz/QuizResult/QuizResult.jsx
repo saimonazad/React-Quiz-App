@@ -110,8 +110,8 @@ const QuizResult = ({ correctAnswers, totalQuestions, result }) => {
           <ReviewBtn backgroundColor="#0062FF" onClick={() => setreviewPage(true)}>Review</ReviewBtn>
           <p className="score__share">
             Share score
-            <Fa_icon size="30" title="medal icon" />
-            <Li_icon size="35" title="medal icon" />
+            <Fa_icon size="30" title="facebook icon" />
+            <Li_icon size="35" title="linkedin icon" />
           </p>
           <p className="workshop__info">
             You can attend this workshop

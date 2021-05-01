@@ -68,11 +68,7 @@ const quizData = [
   },
 ];
 
-const response ={
-  15: 1,
-  12: 2,
-  13:0
-}
+
 
 // export default quizData.sort(() => 0.5 - Math.random());
 export default quizData;

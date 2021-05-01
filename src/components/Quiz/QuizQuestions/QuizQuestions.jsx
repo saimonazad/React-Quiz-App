@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import quizData from "../../../data/questions";
+//data import
 import QuizResult from "../QuizResult/QuizResult";
 
+//styled components import
 import {
   Wrapper,
   Question,
@@ -15,12 +16,20 @@ import {
   ArrowRight,
 } from "./QuizQuestions.styled";
 
-const QuizQuestions = () => {
-  const [quizNo, setQuizNo] = useState(0);
+//react toastify for toast notification
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
   const [correctAns, setCorrectAns] = useState(0);
   const [selectedAns, setSelectedAns] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [responses, setResponses] = useState({});
+
+  const notify = () =>
+    toast.error("Please select an option to move to the next question !!!", {
+      position: toast.POSITION.TOP_RIGHT
+    });
 
   const checkAnswer = () => {
     if (selectedAns != null) {
@@ -30,26 +39,29 @@ const QuizQuestions = () => {
       setIsSubmitted(true);
       setResponses({
         ...responses,
-         [quizData[quizNo].questionId]: selectedAns ,
+        [quizData[quizNo].questionId]: selectedAns,
       });
+    } else {
+      notify();
     }
-    if (quizNo == quizData.length - 1) {
+    if (quizNo == quizLength - 1) {
       setQuizNo(quizNo + 1);
     }
   };
 
   return (
     <Wrapper>
-      {quizNo < quizData.length ? (
+      <ToastContainer />
+      {quizNo < quizLength ? (
         <>
           <Question>
             <p>
-              Question {quizNo + 1} <span>/{quizData.length}</span>
+              Question {quizNo + 1} <span>/{quizLength}</span>
             </p>
             <h1>{quizData[quizNo].question}</h1>
             {quizData[quizNo].questionImage && (
               <img
-              className="question__Image"
+                className="question__Image"
                 src={
                   process.env.PUBLIC_URL +
                   `/quiz-data/img/${quizData[quizNo].questionImage}`
@@ -83,7 +95,7 @@ const QuizQuestions = () => {
           <SubmitBtn block onClick={() => checkAnswer()}>
             SUBMIT
           </SubmitBtn>
-          {isSubmitted && quizNo < quizData.length - 1 && (
+          {isSubmitted && quizNo < quizLength - 1 && (
             <NextBtn
               block
               onClick={() => {
@@ -100,7 +112,7 @@ const QuizQuestions = () => {
       ) : (
         <QuizResult
           correctAnswers={correctAns}
-          totalQuestions={quizData.length}
+          totalQuestions={quizLength}
           result={responses}
         />
       )}

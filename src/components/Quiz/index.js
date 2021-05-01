@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Styled from "styled-components";
+
+import quizData from "../../data/questions";
 
 // import components
 import QuizQuestions from "./QuizQuestions/QuizQuestions";
@@ -12,11 +14,16 @@ const Wrapper = Styled.div`
     margin: 0 auto;
 `;
 
+const quizLength = quizData.length;
+
 const Quiz = () => {
+  const [quizNo, setQuizNo] = useState(0);
+  const props = { quizNo, setQuizNo, quizLength, quizData };
+
   return (
     <Wrapper>
-      <QuizThumbnail />
-      <QuizQuestions />
+      <QuizThumbnail {...props} />
+      <QuizQuestions {...props} />
     </Wrapper>
   );
 };
