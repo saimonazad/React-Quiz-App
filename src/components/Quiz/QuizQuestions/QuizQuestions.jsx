@@ -26,14 +26,21 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [responses, setResponses] = useState({});
 
+  /*
+    react toastify function to invoke toast
+  */
   const notify = () =>
     toast.error("Please select an option to move to the next question !!!", {
-      position: toast.POSITION.TOP_RIGHT
+      position: toast.POSITION.TOP_RIGHT,
     });
 
+  /*
+    onClick Submit btn function
+    check correct answer and submit
+  */
   const checkAnswer = () => {
-    if (selectedAns != null) {
-      if (selectedAns == quizData[quizNo].correct) {
+    if (selectedAns !== null) {
+      if (selectedAns === quizData[quizNo].correct) {
         setCorrectAns(correctAns + 1);
       }
       setIsSubmitted(true);
@@ -44,7 +51,7 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
     } else {
       notify();
     }
-    if (quizNo == quizLength - 1) {
+    if (quizNo === quizLength - 1) {
       setQuizNo(quizNo + 1);
     }
   };
@@ -66,11 +73,12 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
                   process.env.PUBLIC_URL +
                   `/quiz-data/img/${quizData[quizNo].questionImage}`
                 }
+                alt="question pic"
               />
             )}
           </Question>
           <OptionWrapper>
-            {quizData[quizNo].questionType == "text" ? (
+            {quizData[quizNo].questionType === "text" ? (
               quizData[quizNo].answers.map((item, index) => (
                 <Option
                   isActive={selectedAns === index}

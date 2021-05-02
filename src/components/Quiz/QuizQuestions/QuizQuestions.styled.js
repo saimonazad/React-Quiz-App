@@ -17,7 +17,6 @@ const Question = Styled.div`
     }
     h1 {
         color: #000;
-        font-family: "OpenSans", sans-serif;
         font-size: 24px;
         line-height: 30px;
     }
@@ -29,13 +28,11 @@ const Question = Styled.div`
 `;
 const OptionWrapper = Styled.div`
     color:#000;
-    font-family: "OpenSans", sans-serif;
     padding: 30px 0;
 `;
 const Option = Styled(Button)`
     color:#000000;
     text-align: left;
-    font-family: "OpenSans", sans-serif;
     background-color: #EEEFF2;
     font-size: 18px;
     padding: 20px 25px;
@@ -63,7 +60,7 @@ const Option = Styled(Button)`
          `}
 
       ${(props) => {
-        if (props.response && props.response != props.correct) {
+        if (props.response && props.response !== props.correct) {
           return `
                 background-color: #D60000;
                 color: #FFF;
@@ -104,7 +101,7 @@ const ImageAnswers = Styled.img`
          `}
 
       ${(props) => {
-        if (props.response && props.response != props.correct) {
+        if (props.response && props.response !== props.correct) {
           return `
                 border: 5px solid #D60000;
                 border-radius: 15px;
@@ -133,7 +130,7 @@ const ImageContainer = Styled.div`
     `}
 
     ${(props) => {
-      if (props.response && props.response != props.correct) {
+      if (props.response && props.response !== props.correct) {
         return `
                 &:after{
                     content: "✕";
