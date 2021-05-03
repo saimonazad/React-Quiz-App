@@ -10,15 +10,15 @@ const Wrapper = Styled.div`
 `;
 const Question = Styled.div`
     p {
-        color: #60D91A;
+        color: ${(props) => props.theme.colors.Lime};
         font-family: "Montserrat", sans-serif;
         font-size: 16px;
         span {
-            color: #728391;
+            color: ${(props) => props.theme.colors.SlateGray};
         }
     }
     h1 {
-        color: #000;
+        color: ${(props) => props.theme.colors.Black};
         font-size: 20px;
         line-height: 30px;
     }
@@ -58,7 +58,7 @@ const Question = Styled.div`
     
 `;
 const OptionWrapper = Styled.div`
-    color:#000;
+    color:${(props) => props.theme.colors.Black};
     padding: 20px 0;
 
     @media ${device.tablet} {
@@ -69,7 +69,7 @@ const OptionWrapper = Styled.div`
       }
 `;
 const Option = Styled(Button)`
-    color:#000000;
+    color:${(props) => props.theme.colors.Black};
     text-align: left;
     background-color: #EEEFF2;
     font-size: 15px;
@@ -90,20 +90,20 @@ const Option = Styled(Button)`
 
     ${(props) =>
       props.isActive &&
-      `background-color: #60D91A;
-      color: #FFF;
+      `background-color: ${props.theme.colors.Lime};
+      color: ${props.theme.colors.White};
       `}
       
       ${(props) =>
         props.correct &&
-        `background-color: #60D91A;
-         color: #FFF;
+        `background-color: ${props.theme.colors.Lime};
+         color: ${props.theme.colors.White};
          &:after{
              content: "✓";
             float: right;
-            color: #60D91A;
+            color: ${props.theme.colors.Lime};
             border-radius: 50%;
-            background-color: #FFF;
+            background-color: ${props.theme.colors.White};
             padding: 0 5px;
          }
          `}
@@ -112,14 +112,14 @@ const Option = Styled(Button)`
         if (props.response && props.response !== props.correct) {
           return `
                 background-color: #D60000;
-                color: #FFF;
+                color: ${props.theme.colors.White};
 
                 &:after{
                     content: "✕";
                     float: right;
                     color: #D60000;
                     border-radius: 50%;
-                    background-color: #FFF;
+                    background-color: ${props.theme.colors.White};
                     padding: 0 5px;
          }
                 `;
@@ -139,13 +139,13 @@ const ImageAnswers = Styled.img`
     cursor: pointer;
     ${(props) =>
       props.isActive &&
-      `border: 5px solid #60D91A;
+      `border: 5px solid ${props.theme.colors.Lime};
       border-radius: 15px;
       `}
 
     ${(props) =>
       props.correct &&
-      `border: 5px solid #60D91A;
+      `border: 5px solid ${props.theme.colors.Lime};
       border-radius: 15px;
       `}
 
@@ -169,9 +169,9 @@ const ImageContainer = Styled.div`
         content: "✓";
         position: absolute;
         top: 40%;
-        color: #60D91A;
+        color: ${props.theme.colors.Lime};
         border-radius: 50%;
-        background-color: #FFF;
+        background-color: ${props.theme.colors.White};
         padding: 5px 10px;
         left: 40%;
         font-size: 25px;
@@ -187,7 +187,7 @@ const ImageContainer = Styled.div`
                     top: 40%;
                     border-radius: 50%;
                     background-color: #D60000;
-                    color: #FFF;
+                    color: ${props.theme.colors.White};
                     padding: 5px 10px;
                     left: 40%;
                     font-size: 25px;
@@ -197,8 +197,8 @@ const ImageContainer = Styled.div`
     }}
 `;
 const SubmitBtn = Styled(Button)`
-    color:#FFF;
-    background-color: #0062FF;
+    color:${(props) => props.theme.colors.White};
+    background-color: ${(props) => props.theme.colors.BlueRibbon};
     font-size: 14px;
     padding: 18px 0;
     letter-spacing: 0.3rem;
@@ -208,7 +208,7 @@ const SubmitBtn = Styled(Button)`
       }
 `;
 const NextBtn = Styled(Button)`
-    color:#0062FF;
+    color:${(props) => props.theme.colors.BlueRibbon};
     font-size: 14px;
     padding: 25px 0;
     letter-spacing: 0.3rem;

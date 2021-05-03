@@ -11,7 +11,7 @@ const ProgressBar = Styled.progress`
     }
 
     &:-webkit-progress-value {
-      color: #60d91a;
+      color: ${(props) => props.theme.colors.Lime};
       transition: all 0.5s;
     }
 `;

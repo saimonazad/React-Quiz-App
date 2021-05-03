@@ -25,9 +25,8 @@ const Nav = Styled.nav`
         display: block;
         position: absolute;
         right: 20px;
-        background-color: #fff;
+        background-color: ${(props) => props.theme.colors.White};
         padding: 20px 30px;
-        -webkit-box-shadow: 0 0 3px rgb(0 0 0 / 20%);
         box-shadow: 0 0 3px rgb(0 0 0 / 20%);
         visibility: hidden;
         opacity: 0;
@@ -60,7 +59,7 @@ const Nav = Styled.nav`
       
       font-weight: 700;
       font-size: 12px;
-      color: #000;
+      color: ${(props) => props.theme.colors.Black};
     }
     
     .toggle__close {

@@ -6,7 +6,7 @@ import { device } from "../../theme/device";
 
 //styled components
 const Container = Styled.footer`
-  background-color: #000;
+  background-color: ${(props) => props.theme.colors.Black};
 
   @media ${device.laptop}{
     margin-top: 20px;
@@ -15,7 +15,7 @@ const Container = Styled.footer`
 const Wrapper = Styled.div`
     padding: 20px 20px 40px;
     
-    color: #fff;
+    color: ${(props) => props.theme.colors.White};
     margin-top: 50px;
 
     h1 {
@@ -41,7 +41,7 @@ const Wrapper = Styled.div`
             margin: 5px 0;
         }
         ul li a{
-            color: #60D91A;
+            color: ${(props) => props.theme.colors.Lime};
         }
     }
     .contact {
@@ -51,7 +51,7 @@ const Wrapper = Styled.div`
         }
         a {
             display: block;
-            color: #FFF;
+            color: ${(props) => props.theme.colors.White};
             padding: 5px 0;
             font-size: 14px;
         }
@@ -59,11 +59,11 @@ const Wrapper = Styled.div`
     .newsletter {
         input {
             width: 100%;
-            border: 1px solid #FFFFFF;
+            border: 1px solid ${(props) => props.theme.colors.White};
             margin-bottom: 20px;
             padding : 15px 10px;
-            background: #000;
-            color: #fff;
+            background: ${(props) => props.theme.colors.Black};
+            color: ${(props) => props.theme.colors.White};
         }
     }
     @media ${device.tablet}{
@@ -94,15 +94,11 @@ const Wrapper = Styled.div`
     }
   `;
 const SubscribeBtn = Styled(Button)`
-    border: 2px solid #60D91A;
-    color: #60D91A;
-    background: #000;
+    border: 2px solid ${(props) => props.theme.colors.Lime};
+    color: ${(props) => props.theme.colors.Lime};
+    background: ${(props) => props.theme.colors.Black};
     padding: 10px 70px;
     box-shadow: none;
 `;
 
-export {
-    Container,
-    Wrapper,
-    SubscribeBtn
-}
+export { Container, Wrapper, SubscribeBtn };

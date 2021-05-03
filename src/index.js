@@ -3,11 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ThemeProvider } from "styled-components";
+import theme from "./theme/theme";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
+  </ThemeProvider>,
   document.getElementById("root")
 );
 
@@ -16,20 +18,18 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-
-  const registerServiceWorker = () => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then((registration) => {
-            console.log("SW registered: ", registration);
-          })
-          .catch((registrationError) => {
-            console.log("SW registration failed: ", registrationError);
-          });
-      });
-    }
-  };
-  registerServiceWorker();
-
+const registerServiceWorker = () => {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) => {
+          console.log("SW registered: ", registration);
+        })
+        .catch((registrationError) => {
+          console.log("SW registration failed: ", registrationError);
+        });
+    });
+  }
+};
+registerServiceWorker();

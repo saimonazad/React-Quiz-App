@@ -35,7 +35,7 @@ const Button = Styled.button`
     if (props.textColor) {
       return `color: ${props.textColor};`;
     }
-    return "color: #FFF;";
+    return "color: ${(props) => props.theme.colors.White};";
   }} 
   
 
@@ -57,13 +57,13 @@ const Button = Styled.button`
     switch (props.type) {
       case "signup":
         return `
-            background-color: #60d91a;
-            box-shadow: 0px 10px 20px #60d91a4d;
+            background-color: ${(props) => props.theme.colors.Lime};
+            box-shadow: 0px 10px 20px ${(props) => props.theme.colors.Lime}4d;
             padding: 8px 15px;
             border-radius: 4px;`;
       case "submit":
         return `
-            box-shadow: 0px 10px 20px #60d91a4d;
+            box-shadow: 0px 10px 20px ${(props) => props.theme.colors.Lime}4d;
             padding: 8px 15px;
             border-radius: 4px;`;
     }

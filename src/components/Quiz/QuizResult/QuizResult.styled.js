@@ -12,7 +12,7 @@ const Wrapper = Styled.div`
   text-align: center;
   
   .title {
-    color: #0062FF;
+    color: ${(props) => props.theme.colors.BlueRibbon};
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 7.2px;
@@ -21,31 +21,31 @@ const Wrapper = Styled.div`
     vertical-align: middle;
   }
   .score {
-    color: #60D91A;
+    color: ${(props) => props.theme.colors.Lime};
     font-size: 80px;
     font-family: "Montserrat", sans-serif;
     margin: 10px 0;
   }
   .score__greet{
-    color: #000;
+    color: ${(props) => props.theme.colors.Black};
     font-size: 32px;
     font-family: "OpenSans", sans-serif;
     font-weight: 700;
     margin: 10px 0;
   }
   .score__details {
-    color: #000;
+    color: ${(props) => props.theme.colors.Black};
     font-size: 18px;
     font-family: "OpenSans", sans-serif;
   }
   .score__share {
-    color: #728391;
+    color: ${(props) => props.theme.colors.SlateGray};
     font-size: 18px;
     font-family: "OpenSans", sans-serif;
     margin: 23px 0 0;
   }
   .workshop__info {
-    color: #000;
+    color: ${(props) => props.theme.colors.Black};
     font-size: 18px;
     font-family: "OpenSans", sans-serif;
     font-weight: 700;
@@ -55,9 +55,11 @@ const Wrapper = Styled.div`
 `;
 
 const ReviewBtn = Styled(Button)`
-  box-shadow: 0px 10px 20px #0062FF4D;
+  background: ${(props) => props.theme.colors.BlueRibbon};
+  box-shadow: 0px 10px 20px ${(props) => props.theme.colors.LightBlueRibbon};
   padding: 20px 80px;
   margin-top: 10px;
+  color: ${(props) => props.theme.colors.White};
 `;
 
 const Workshop = Styled.div`
@@ -67,7 +69,7 @@ const Workshop = Styled.div`
   
   p {
     text-align: left;
-    color: #000;
+    color: ${(props) => props.theme.colors.Black};
     margin: 10px 15px 20px 15px;
     font-family: "OpenSans", sans-serif;
     font-size: 16px;
@@ -83,7 +85,7 @@ const LinkedinIcon = Styled(LinkedinSquare)`
   
 `;
 const MedalIcon = Styled(Medal)`
-    color: #0062FF;
+    color: ${(props) => props.theme.colors.BlueRibbon};
     margin-right: 8px;
 `;
 

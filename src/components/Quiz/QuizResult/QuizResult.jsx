@@ -31,7 +31,6 @@ const QuizResult = ({ correctAnswers, totalQuestions, result }) => {
             You got {correctAnswers} out of {totalQuestions} Questions
           </p>
           <ReviewBtn
-            backgroundColor="#0062FF"
             onClick={() => setreviewPage(true)}
           >
             Review

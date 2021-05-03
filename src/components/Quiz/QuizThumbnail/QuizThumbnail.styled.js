@@ -67,12 +67,12 @@ const Wrapper = Styled.div`
     }
     .quiz__info--top {
       p {
-        color: #000;
-        background-color: #fff;
+        color: ${(props) => props.theme.colors.Black};
+        background-color: ${(props) => props.theme.colors.White};
         border-radius: 20px;
         display: inline-block;
         padding: 7px 18px;
-        box-shadow: 0px 10px 20px #60D91A4D;
+        box-shadow: 0px 10px 20px ${(props) => props.theme.colors.Lime}4D;
         font-size: 12px;
         font-weight: 600;
         font-family: "Montserrat", sans-serif;
