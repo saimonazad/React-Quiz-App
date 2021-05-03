@@ -47,8 +47,7 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
       setResponses({
         ...responses,
         [quizData[quizNo].questionId]: selectedAns,
-      })
-      ;
+      });
     } else {
       notify();
     }
@@ -70,10 +69,7 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
             {quizData[quizNo].questionImage && (
               <img
                 className="question__Image"
-                src={
-                  process.env.PUBLIC_URL +
-                  `/quiz-data/img/${quizData[quizNo].questionImage}`
-                }
+                src={`https://res.cloudinary.com/fadsaf/image/upload/v1620063436/quizData/${quizData[quizNo].questionImage}`}
                 alt="question pic"
               />
             )}
@@ -95,7 +91,7 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
                   <ImageAnswers
                     isActive={selectedAns === index}
                     onClick={(e) => setSelectedAns(index)}
-                    src={process.env.PUBLIC_URL + `/quiz-data/img/${img}`}
+                    src={`https://res.cloudinary.com/fadsaf/image/upload/v1620063436/quizData/${img}`}
                   ></ImageAnswers>
                 ))}
               </OptionImage>

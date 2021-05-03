@@ -26,8 +26,7 @@ const ReviewAnswers = ({ result }) => {
               <img
                 className="question__Image"
                 src={
-                  process.env.PUBLIC_URL +
-                  `/quiz-data/img/${quizData[index].questionImage}`
+                  `https://res.cloudinary.com/fadsaf/image/upload/v1620063436/quizData/${quizData[index].questionImage}`
                 }
                 alt="question pic"
               />
@@ -52,7 +51,7 @@ const ReviewAnswers = ({ result }) => {
                     response={result[quiz.questionId] === index}
                   >
                     <ImageAnswers
-                      src={process.env.PUBLIC_URL + `/quiz-data/img/${img}`}
+                      src={`https://res.cloudinary.com/fadsaf/image/upload/v1620063436/quizData/${img}`}
                       correct={quiz.correct === index}
                       response={result[quiz.questionId] === index}
                     ></ImageAnswers>

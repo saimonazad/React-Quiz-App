@@ -1,7 +1,7 @@
 const quizData = [
   {
     question: "Why would you get this pop up?",
-    questionImage: "1793223770.png",
+    questionImage: "1793223770_oiiyuk.png",
     questionType: "text",
     answers: [
       "The layer you are trying to work on is locked",
@@ -15,9 +15,9 @@ const quizData = [
     question: "Why would you get this pop up?",
     questionType: "image",
     answers: [
-      "oriento-0dg-EfHgA8Q-unsplash.png",
-      "chris-liverani-rD2dc_2S3i0-unsplash.png",
-      "oriento-0dg-EfHgA8Q-unsplash.png",
+      "oriento-0dg-EfHgA8Q-unsplash_zec7zy.png",
+      "chris-liverani-rD2dc_2S3i0-unsplash_dkymd1.png",
+      "oriento-0dg-EfHgA8Q-unsplash_zec7zy.png",
     ],
     correct: 1,
     questionId: "110",
@@ -68,7 +68,4 @@ const quizData = [
   },
 ];
 
-
-
-// export default quizData.sort(() => 0.5 - Math.random());
 export default quizData;

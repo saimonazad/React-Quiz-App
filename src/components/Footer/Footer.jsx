@@ -22,6 +22,7 @@ const Footer = () => {
             individuals and organizations to share skills and exchange technical
             knowledge to bridge the skills gap in Bangladesh.
           </p>
+          <img src="https://res.cloudinary.com/fadsaf/image/upload/v1620064337/quizData/ict_ck0p7x.png" alt="ict award"/>
         </div>
         <div className="links">
           <h1>HELPFUL LINKS</h1>
