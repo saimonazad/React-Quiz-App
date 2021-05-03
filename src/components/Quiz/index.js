@@ -8,7 +8,7 @@ import QuizQuestions from "./QuizQuestions/QuizQuestions";
 import QuizThumbnail from "./QuizThumbnail/QuizThumbnail";
 
 //device breakpoints
-import { device } from "../../theme/device";
+import device from "../../theme/device";
 
 //styled components
 const Wrapper = Styled.div`

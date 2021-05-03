@@ -14,8 +14,9 @@ const Button = Styled.button`
         return "font-size: 12px;";
       case "large":
         return "font-size: 20px;";
+      default:
+        return "font-size: 16px;";
     }
-    return "font-size: 16px;";
   }}
 
   ${(props) => {
@@ -35,7 +36,7 @@ const Button = Styled.button`
     if (props.textColor) {
       return `color: ${props.textColor};`;
     }
-    return "color: ${(props) => props.theme.colors.White};";
+    return `color: ${props.theme.colors.White};`;
   }} 
   
 
@@ -46,7 +47,7 @@ const Button = Styled.button`
     if (props.backgroundColor) {
       return `background-color: ${props.backgroundColor};`;
     }
-    return "background-color: white;";
+    return `background-color: ${props.theme.colors.White};`;
   }}
 
 
@@ -57,15 +58,17 @@ const Button = Styled.button`
     switch (props.type) {
       case "signup":
         return `
-            background-color: ${(props) => props.theme.colors.Lime};
-            box-shadow: 0px 10px 20px ${(props) => props.theme.colors.Lime}4d;
+            background-color: ${props.theme.colors.Lime};
+            box-shadow: 0px 10px 20px ${props.theme.colors.LightLime};
             padding: 8px 15px;
             border-radius: 4px;`;
       case "submit":
         return `
-            box-shadow: 0px 10px 20px ${(props) => props.theme.colors.Lime}4d;
+            box-shadow: 0px 10px 20px ${props.theme.colors.LightLime};
             padding: 8px 15px;
             border-radius: 4px;`;
+      default:
+        return ``;      
     }
   }}
 `;

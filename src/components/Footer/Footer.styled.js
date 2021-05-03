@@ -2,7 +2,7 @@ import Styled from "styled-components";
 //import shared button
 import Button from "../../shared/button";
 //device breakpoints
-import { device } from "../../theme/device";
+import device from "../../theme/device";
 
 //styled components
 const Container = Styled.footer`

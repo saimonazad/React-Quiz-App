@@ -3,7 +3,7 @@ import Button from "../../../shared/button";
 import { ArrowRightAlt } from "@styled-icons/material-sharp/ArrowRightAlt";
 
 //device breakpoints
-import { device } from "../../../theme/device";
+import device from "../../../theme/device";
 //styled components
 const Wrapper = Styled.div`
   flex: 1 1 100%;
@@ -209,6 +209,7 @@ const SubmitBtn = Styled(Button)`
 `;
 const NextBtn = Styled(Button)`
     color:${(props) => props.theme.colors.BlueRibbon};
+    background-color: transparent;
     font-size: 14px;
     padding: 25px 0;
     letter-spacing: 0.3rem;

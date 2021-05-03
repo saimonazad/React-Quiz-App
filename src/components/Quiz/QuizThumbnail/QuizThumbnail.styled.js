@@ -8,7 +8,7 @@ import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare";
 import { Facebook } from "@styled-icons/entypo-social/Facebook";
 
 //device breakpoints
-import { device } from "../../../theme/device";
+import device from "../../../theme/device";
 
 //styled components
 const Wrapper = Styled.div`

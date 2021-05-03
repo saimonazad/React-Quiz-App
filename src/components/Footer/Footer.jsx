@@ -1,5 +1,8 @@
 import React from "react";
 
+//react router Link
+import { Link } from "react-router-dom";
+
 //import styled components
 import {
   Container,
@@ -24,16 +27,16 @@ const Footer = () => {
           <h1>HELPFUL LINKS</h1>
           <ul>
             <li>
-              <a href="#">FAQ</a>
+              <Link to="/faq">FAQ</Link>
             </li>
             <li>
-              <a href="#">Terms and Conditions</a>
+              <Link to="/tos">Terms and Conditions</Link>
             </li>
             <li>
-              <a href="#">Privacy Statement</a>
+              <Link to="/privacy">Privacy Statement</Link>
             </li>
             <li>
-              <a href="#">About Upskill</a>
+              <Link to="/about">About Upskill</Link>
             </li>
           </ul>
         </div>
@@ -41,7 +44,7 @@ const Footer = () => {
           <h1>CONTACT</h1>
           <p>
             Upskill Training Center Flat- 4B, House- 516/3, Lane- 10 Baridhara
-            DOHS{" "}
+            DOHS
           </p>
           <a href="tel:01727234132">01727 234132</a>
           <a href="mailto:sanan.upskill@gmail.com">sanan.upskill@gmail.com</a>

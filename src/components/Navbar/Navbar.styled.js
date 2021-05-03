@@ -1,6 +1,6 @@
 import Styled from "styled-components";
 //device breakpoints
-import { device } from "../../theme/device";
+import device from "../../theme/device";
 //icons
 import menuIcon from "../../assets/icons/menu.svg";
 import closeIcon from "../../assets/icons/close.svg";

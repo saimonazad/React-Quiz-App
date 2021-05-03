@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState } from "react";
 
 //data import
 import QuizResult from "../QuizResult/QuizResult";
