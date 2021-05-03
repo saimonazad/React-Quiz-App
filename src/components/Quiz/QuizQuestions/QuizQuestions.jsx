@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 
 //data import
 import QuizResult from "../QuizResult/QuizResult";
@@ -47,7 +47,8 @@ const QuizQuestions = ({ quizNo, setQuizNo, quizLength, quizData }) => {
       setResponses({
         ...responses,
         [quizData[quizNo].questionId]: selectedAns,
-      });
+      })
+      ;
     } else {
       notify();
     }

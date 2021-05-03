@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Quiz App",
+  "name": "React Quiz App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "orientation": "portrait",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/",
+  "description": "React Quiz App for ISA Chaldal by Upskill",
+  "background_color": "#01579b",
+  "theme_color": "#01579b",
+  "prefer_related_applications": true
 }

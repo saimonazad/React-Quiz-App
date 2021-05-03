@@ -7,11 +7,19 @@ import quizData from "../../data/questions";
 import QuizQuestions from "./QuizQuestions/QuizQuestions";
 import QuizThumbnail from "./QuizThumbnail/QuizThumbnail";
 
+//device breakpoints
+import { device } from "../../theme/device";
+
 //styled components
 const Wrapper = Styled.div`
     display: flex;
-    max-width: 1300px;
-    margin: 0 auto;
+    flex-direction: column;
+    padding: 0 1.25rem 0;
+    @media ${device.tablet} {
+      flex-direction: row;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
 `;
 
 const quizLength = quizData.length;

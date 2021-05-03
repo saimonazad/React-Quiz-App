@@ -2,6 +2,8 @@ import Styled from "styled-components";
 import Button from "../../../shared/button";
 import { ArrowRightAlt } from "@styled-icons/material-sharp/ArrowRightAlt";
 
+//device breakpoints
+import { device } from "../../../theme/device";
 //styled components
 const Wrapper = Styled.div`
   flex: 1 1 100%;
@@ -10,34 +12,81 @@ const Question = Styled.div`
     p {
         color: #60D91A;
         font-family: "Montserrat", sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         span {
             color: #728391;
         }
     }
     h1 {
         color: #000;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 30px;
     }
     img {
       display:block;
-      margin: 30px auto 0 auto;
-      width: 55%;
+      margin: 10px auto 0 auto;
+      width: 85%;
     }
+
+    @media ${device.tablet} {
+        p {
+          font-size: 18px;
+      }
+      h1 {
+          font-size: 22px;
+          line-height: 30px;
+      }
+      img {
+        margin: 20px auto 0 auto;
+        width: 85%;
+      }
+    }
+    @media ${device.laptop} {
+      p {
+          font-size: 18px;
+      }
+      h1 {
+          font-size: 24px;
+          line-height: 30px;
+      }
+      img {
+        margin: 30px auto 0 auto;
+        width: 55%;
+      }
+      }
+      
+    
 `;
 const OptionWrapper = Styled.div`
     color:#000;
-    padding: 30px 0;
+    padding: 20px 0;
+
+    @media ${device.tablet} {
+        padding: 20px 0;
+      }
+      @media ${device.laptop} {
+        padding: 30px 0;
+      }
 `;
 const Option = Styled(Button)`
     color:#000000;
     text-align: left;
     background-color: #EEEFF2;
-    font-size: 18px;
-    padding: 20px 25px;
+    font-size: 15px;
+    padding: 15px 15px;
     margin-bottom: 10px;
     font-weight: 600;
+
+    @media ${device.tablet} {
+      font-size: 17px;
+    padding: 16px 20px;
+      }
+      @media ${device.laptop} {
+        font-size: 18px;
+    padding: 20px 25px;
+
+      }
+
 
     ${(props) =>
       props.isActive &&
@@ -98,7 +147,7 @@ const ImageAnswers = Styled.img`
       props.correct &&
       `border: 5px solid #60D91A;
       border-radius: 15px;
-         `}
+      `}
 
       ${(props) => {
         if (props.response && props.response !== props.correct) {
@@ -151,8 +200,12 @@ const SubmitBtn = Styled(Button)`
     color:#FFF;
     background-color: #0062FF;
     font-size: 14px;
-    padding: 25px 0;
+    padding: 18px 0;
     letter-spacing: 0.3rem;
+
+    @media ${device.tablet} {
+        padding: 25px 0;
+      }
 `;
 const NextBtn = Styled(Button)`
     color:#0062FF;
