@@ -1,4 +1,4 @@
-# React Quiz App
+# React Quiz App [PWA]
 [![Build Status](https://travis-ci.com/saimonazad/React-Quiz-App.svg?branch=main)](https://travis-ci.com/saimonazad/React-Quiz-App)
 
 Static Quiz App with create-react-app.
